@@ -55,7 +55,7 @@ if (start == "ja")
 
 else if (start == "nej")
 {
-    Console.WriteLine("Nehepp varför startade du programmet då???? mongo");
+    Console.WriteLine("Nehepp varför startade du programmet då????");
     Console.WriteLine("Tryck enter för att stänga programmet");
     Console.ReadLine();
 }
