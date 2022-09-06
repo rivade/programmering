@@ -10,7 +10,7 @@ while (start != "ja" && start != "nej")
 
 if (start == "ja")
 {
-    string active = "1";
+    string active = ("1");
     string win = ("0");
     while (active == "1")
     {
