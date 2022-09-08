@@ -246,7 +246,7 @@ MMMMMMMMMMMMMMMMMMMWX0XNKXWMMMMMMMMMMM0:co:;llc;oXMMMMMMW0dO0kld0klkWMMMMMMMMMMM
     }
     else if (win == "0")
     {
-        Console.WriteLine("Vill du försöka igen?");
+        Console.WriteLine("Vill du börja om?");
         string retry = Console.ReadLine().ToLower();
         while (retry != "ja" && retry != "nej")
         {
