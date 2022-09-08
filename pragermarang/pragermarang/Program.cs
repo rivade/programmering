@@ -1,24 +1,5 @@
-﻿Random rnd = new Random();
-Console.ForegroundColor = ConsoleColor.Green;
-Console.WriteLine("Välkommen till Den Fega Riddarens flykt!");
-Console.WriteLine("Är du redo att börja?");
-string start = Console.ReadLine().ToLower();
-while (start != "ja" && start != "nej")
-{
-    Console.WriteLine("Du måste välja antingen ja eller nej");
-    Console.WriteLine("Är du redo att börja?");
-    start = Console.ReadLine().ToLower();
-}
-
-if (start == "ja")
-{
-    string active = ("1");
-    string win = ("0");
-    while (active == "1")
-    {
-        Console.Clear();
-        Console.ForegroundColor = ConsoleColor.White;
-        Console.WriteLine(@"
+﻿void rum(){
+    Console.WriteLine(@"
 ............''',,;:cloooooddxxkkxkkkkkkkkOOO00KKKKKKKKXXXKKKKKKKKKKKK00KKKKKKKK000000OOOkkkxdxxxdddoollccc:::;;,,,''....
 ...........''',,,;:clodddddxxkkkkkkkkkOOOO000KKKKKKKXXXXXXXXKKKKKKKKKKKKKKKKKKK000000OOOOOkkkkkxxxddoollcccc::;;,,,''...
 ...........''',,;;clloodddxxkkkkkkOOOOOOO000KKKKXXXXXXXXXXXXXXXXXXXXXKKKKKKKKKKK0000000OOOOOOkkkxxxddoolllllcc::;,,'''..
@@ -50,21 +31,9 @@ OOkO0OkOkkkkOkkkOO0OO00OOkOOkkkOOOO00OOO000OkkOOkkOOxc  dxxo   lk000OkO0OO0KK0O0
 xOOxkkkkxkOkxO0OOOO0OOOOkOOkkkOOO000OO00OOkOOOOkkkkkkxdkOOOkdoodk000kkO0OOO0K000000OO00OOO00OO0K0OO0K0OOOOkkOOOOO00KK000
 xokOkxxOkxkOOOOOOkkOOOkOOOkxkOOk0KK0OOKKOxk00OOkOOkkOKKKOOKK00OO00OkkOOOkO0KKK0O000OO0000OOO0OOO000OO00OOOOOOOOOkk0KK0OK
 ");
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Du befinner dig i ett slott, till höger och vänster om dig finns två dörrar.");
-        Console.WriteLine("Vilken dörr tar du?");
-        string valEtt = Console.ReadLine().ToLower();
-        while (valEtt != "höger" && valEtt != "vänster")
-        {
-            Console.WriteLine("Du måste välja antingen höger eller vänster");
-            Console.WriteLine("Vilken dörr tar du?");
-            valEtt = Console.ReadLine().ToLower();
-        }
-        if (valEtt == "vänster")
-        {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(@"
+}
+void hall(){
+    Console.WriteLine(@"
 ........................................................................................................................
 ..............,,,,,,,...................................................................................................
 ........................................................................................................................
@@ -93,27 +62,9 @@ xokOkxxOkxkOOOOOOkkOOOkOOOkxkOOk0KK0OOKKOxk00OOkOOkkOKKKOOKK00OO00OkkOOOkO0KKK0O
 ...........................'...''''...''.''''....'.......''''......''...'''...''........................................
 ................................'''''.....''''....'..............'..'.........'.................'.......................
 ");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Du kommer ut i en hall, med en stor port längst fram och en dörr vid höger sida av hallen");
-            Console.WriteLine("Tar du dörren till höger eller porten?");
-            string valTvå = Console.ReadLine().ToLower();
-            while (valTvå != "höger" && valTvå != "porten")
-            {
-                Console.WriteLine("Du måste välja antingen höger eller porten");
-                Console.WriteLine("Tar du dörren till höger eller porten?");
-                valTvå = Console.ReadLine().ToLower();
-            }
-            if (valTvå == "porten")
-            {
-                Console.Clear();
-                Console.WriteLine("Du kom ut ur slottet och vann spelet!");
-                win = ("1");
-            }
-            else if (valTvå == "höger")
-            {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine(@"
+}
+void kung(){
+Console.WriteLine(@"
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMX  NMMMMNXNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWK KWMMMWK KWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMWWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN  KWWNK   NMMMMWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -168,37 +119,9 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMWWWNNXXKKK                                            
 MMMMMMMMMMMMMMMMMMMMMMMMMMWWWNNNNXXXKKKKKKKKK                                                 KKKXXXXXNNWWWWMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMWWWWWNNNNNNNNNNXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXKK    KNNNNNNNWWWWWMMMMMMMMMMMMMM
 ");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Bakom dörren fanns den arga kungen!");
-                Console.WriteLine("Vill du försöka slåss?");
-                string fight = Console.ReadLine().ToLower();
-                while (fight != "ja" && fight != "nej"){
-                    Console.WriteLine("Du måste välja antingen ja eller nej");
-                    Console.WriteLine("Vill du försöka slåss?");
-                    fight = Console.ReadLine();
-                }
-                if (fight == "ja"){
-                    int result = rnd.Next(1, 3);
-                    if (result == 1){
-                        Console.Clear();
-                        Console.WriteLine("Du besegrade kungen och klarade spelet!");
-                        win = ("1");
-                    }
-                    else if (result == 2){
-                        Console.WriteLine("Du förlorade!");
-                    }
-                }
-                else if (fight == "nej"){
-                    Console.WriteLine("När du vänder ryggen till och försöker fly hugger kungen dig i ryggen!");
-                    Console.WriteLine("Du förlorade!");
-                }
-            }
-        }
-        else if (valEtt == "höger")
-        {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(@"
+}
+void drake(){
+Console.WriteLine(@"
 MMMMMMMMMMMMMMMMMMMMMWk:xNWMK; OWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMK; xNMO;.;dKWMWWMMMMMMMMMMMMMMMW0oodkKNNXXXNNWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMNc. ld:  co::cOWMMMMMMMMMMMMMMMMNk:;cloc ;;;::cclloodkO0KNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -234,6 +157,96 @@ MMMMMMMMMMMMMMMMMMMM0:;; .      dNMMMMMXx: .    .. .cKMMMNOoc;      oWMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMNl.cl;;looocxNMMMMMKo: .; .  .:dxXMMMWkc:;  c  ; xWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMWX0XNKXWMMMMMMMMMMM0:co:;llc;oXMMMMMMW0dO0kld0klkWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 ");
+}
+Random rnd = new Random();
+
+Console.ForegroundColor = ConsoleColor.Green;
+Console.WriteLine("Välkommen till Den Fega Riddarens flykt!");
+Console.WriteLine("Är du redo att börja?");
+string start = Console.ReadLine().ToLower();
+while (start != "ja" && start != "nej")
+{
+    Console.WriteLine("Du måste välja antingen ja eller nej");
+    Console.WriteLine("Är du redo att börja?");
+    start = Console.ReadLine().ToLower();
+}
+
+if (start == "ja")
+{
+    string active = ("1");
+    string win = ("0");
+    while (active == "1")
+    {
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.White;
+        rum();
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Du befinner dig i ett slott, till höger och vänster om dig finns två dörrar.");
+        Console.WriteLine("Vilken dörr tar du?");
+        string valEtt = Console.ReadLine().ToLower();
+        while (valEtt != "höger" && valEtt != "vänster")
+        {
+            Console.WriteLine("Du måste välja antingen höger eller vänster");
+            Console.WriteLine("Vilken dörr tar du?");
+            valEtt = Console.ReadLine().ToLower();
+        }
+        if (valEtt == "vänster")
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.White;
+            hall();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Du kommer ut i en hall, med en stor port längst fram och en dörr vid höger sida av hallen");
+            Console.WriteLine("Tar du dörren till höger eller porten?");
+            string valTvå = Console.ReadLine().ToLower();
+            while (valTvå != "höger" && valTvå != "porten")
+            {
+                Console.WriteLine("Du måste välja antingen höger eller porten");
+                Console.WriteLine("Tar du dörren till höger eller porten?");
+                valTvå = Console.ReadLine().ToLower();
+            }
+            if (valTvå == "porten")
+            {
+                Console.Clear();
+                Console.WriteLine("Du kom ut ur slottet och vann spelet!");
+                win = ("1");
+            }
+            else if (valTvå == "höger")
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.White;
+                kung();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Bakom dörren fanns den arga kungen!");
+                Console.WriteLine("Vill du försöka slåss?");
+                string fight = Console.ReadLine().ToLower();
+                while (fight != "ja" && fight != "nej"){
+                    Console.WriteLine("Du måste välja antingen ja eller nej");
+                    Console.WriteLine("Vill du försöka slåss?");
+                    fight = Console.ReadLine();
+                }
+                if (fight == "ja"){
+                    int result = rnd.Next(1, 3);
+                    if (result == 1){
+                        Console.Clear();
+                        Console.WriteLine("Du besegrade kungen och klarade spelet!");
+                        win = ("1");
+                    }
+                    else if (result == 2){
+                        Console.WriteLine("Du förlorade!");
+                    }
+                }
+                else if (fight == "nej"){
+                    Console.WriteLine("När du vänder ryggen till och försöker fly hugger kungen dig i ryggen!");
+                    Console.WriteLine("Du förlorade!");
+                }
+            }
+        }
+        else if (valEtt == "höger")
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.White;
+            drake();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Bakom den högra dörren fanns en drake som åt upp dig!");
             Console.WriteLine("Du förlorade!");
