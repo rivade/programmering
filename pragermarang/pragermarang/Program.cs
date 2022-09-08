@@ -1,4 +1,5 @@
-﻿Console.ForegroundColor = ConsoleColor.Green;
+﻿Random rnd = new Random();
+Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine("Välkommen till Den Fega Riddarens flykt!");
 Console.WriteLine("Är du redo att börja?");
 string start = Console.ReadLine().ToLower();
@@ -168,8 +169,29 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMWWWNNNNXXXKKKKKKKKK                                   
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMWWWWWNNNNNNNNNNXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXKK    KNNNNNNNWWWWWMMMMMMMMMMMMMM
 ");
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Bakom dörren fanns den arga kungen som avrättade dig!");
-                Console.WriteLine("Du förlorade!");
+                Console.WriteLine("Bakom dörren fanns den arga kungen!");
+                Console.WriteLine("Vill du försöka slåss?");
+                string fight = Console.ReadLine().ToLower();
+                while (fight != "ja" && fight != "nej"){
+                    Console.WriteLine("Du måste välja antingen ja eller nej");
+                    Console.WriteLine("Vill du försöka slåss?");
+                    fight = Console.ReadLine();
+                }
+                if (fight == "ja"){
+                    int result = rnd.Next(1, 3);
+                    if (result == 1){
+                        Console.Clear();
+                        Console.WriteLine("Du besegrade kungen och klarade spelet!");
+                        win = ("1");
+                    }
+                    else if (result == 2){
+                        Console.WriteLine("Du förlorade!");
+                    }
+                }
+                else if (fight == "nej"){
+                    Console.WriteLine("När du vänder ryggen till och försöker fly hugger kungen dig i ryggen!");
+                    Console.WriteLine("Du förlorade!");
+                }
             }
         }
         else if (valEtt == "höger")
@@ -234,7 +256,7 @@ MMMMMMMMMMMMMMMMMMMWX0XNKXWMMMMMMMMMMM0:co:;llc;oXMMMMMMW0dO0kld0klkWMMMMMMMMMMM
         }
         if (retry == "ja")
         {
-            active = ("1");
+            continue;
         }
         else if (retry == "nej")
         {
